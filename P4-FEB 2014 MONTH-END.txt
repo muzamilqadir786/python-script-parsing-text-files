@@ -1,0 +1,19 @@
+ A44M359RPT        SUMMARY FOR FEB, 2014 MONTH-END REMITTANCE        PAGE  1    
+ USER # 0055A   JULY 29 HOSTED                                      28-02-14    
+                                OPT               CLAIMS   CLAIMS  EDIT/ELIG    
+ PHYSICIAN NUMBER AND NAME      CHQ TOTAL FEES  PROCESSED  PENDING  RETURNS     
+ 00705 KYLE NIKITA H             IY  13,395.66        65        17        0     
+       INTEREST                           2.41         3         0        0     
+ 01099 FOSHAR JIM                IY      15.37         2         0        0     
+       INTEREST                            .02         1         0        0     
+ 01207 RICK V                    IY   7,769.04        33        18        0     
+       INTEREST                           1.07         1         0        0     
+ 01660 KAPOOR SANDY J            IY   8,285.50        38        23        0     
+ 01908 KAI  JOEL K               IY  15,746.95        41         8        0     
+       INTEREST                            .19         1         0        0     
+       REPORT TOTAL              IY  45,212.52       179        66        0     
+       REMITTANCE FILE TOTAL         45,212.52                                  
+       PAYMENT TOTAL                 45,212.52                                  
+ OPTION/CHEQUE INDICATORS : IY - IN/CHEQUE              IS - IN/SALARIED        
+                            IN - IN/NO CHEQUE (*IY -CHQ)ON - OUT/NO CHEQUE      
+ END OF REPORT                                                                  

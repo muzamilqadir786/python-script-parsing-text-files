@@ -1,0 +1,92 @@
+ 
+
+
+Script: P4_Processor
+
+Command Line Inputs:
+ MySQL Password
+ Input File path
+ Send E-mails(y/n)
+
+ Purpose:
+  Record the Return Summary data in the database and link it to the correct physician records.
+
+ ** If processing is not Successful we need to display an error message **
+ The script will be run on the command line on a linux system
+
+
+Logic:
+
+ Given a P4 Return Summary file: 
+   1. Parse the file per "P4 Screen Shot"
+   2. Query the physicians table to get the physician_id for each practitioner_number that was parsed from the P3 File
+   3. Inset a "returns" record for the file
+   4. Insert a "return_summary_line" record for each row that was parsed from the P4 file
+   5. IF command Line input "Send E-mails" = "Y"
+      -> Send an e-mail to each physician that had a return_summary_line entry (See template below)
+      -> The email address is stored in the DB: physicians.email
+
+ Processing should fail if:
+  I.   Cannot connect to the DB
+  II.  Cannot locate any physician_id in the physicians table
+  *** I.E. we should not write anything to the DB unless we can locate all of the correct IDs ***
+  ***      We should never write a partial file to the DB ***
+     (Reasoning: If the script fails then I can correct the issue and just re-run the script to process the file)
+
+
+
+
+E-mail Template to use:
+  To: {physicians.email}
+
+  Subject: 
+  Reconciliation File Loaded
+
+  Body: 
+  Hello {physicians.preferred_name},
+
+  The {returns.name} reconciliation file has just been loaded into the system.
+
+  Here's what was loaded:
+
+  Total Fees: {return_summary_lines.total_fees}
+  Processed: {return_summary_lines.claims_processed}
+  Pending: {return_summary_lines.claims_pending}
+  Returns: {return_summary_lines.edit_eligibility_returns}
+  Interest: {return_summary_lines.interest}
+  Interest Claims: {return_summary_lines.interest_claims_processed}
+
+  Feel free to log in to ammes.ca  to review it at your convenience,
+
+  Thank-you.
+
+  - Sandy
+
+
+
+
+DB Connection Info:
+  DB Name: ammes_main
+
+SMTP Info to use:
+  Server: mail.ammes.ca
+  Port: 587
+  User Name: automation@ammes.ca
+  Password: odeskp4
+
+
+
+The bigger Picture:
+ This script is part of a larger system, for contxt here's how it fits:
+ 	1. A return file is sent from a 3rd party system and this file is sent along-side it
+ 	2. The return file is processed (separate script)
+ 	3. **** We run this Script to store the P4 summary and inform physicians that the return file has been processed *** 
+
+
+
+
+
+
+
+
+

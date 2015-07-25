@@ -1,0 +1,44 @@
+ A44M132RPT                       M.H.S.C.                                      
+                     FILE EXCHANGE AUDIT CONTROL REPORT                         
+                               PREPARED  14 02 27       REF. NO:00084           
+                                              17:11:26   27-02-14 PAGE 0001     
+ USER NO  0055A JULY 29 HOSTED                           1ST CLM# 000040500     
+                                                                                
+ PHYSICIAN 01207 RICK VINCE                                                   
+                                                                                
+ PHYSICIAN 01207  # OF SOCIOL  RECORDS             18                           
+                  # OF ADDRESS RECORDS             18                           
+                  # OF REMARKS RECORDS              6                           
+                  # OF SERVICE RECORDS             32                           
+                  # OF NON-RES RECORDS              2                           
+                  TOTAL FEE SUBMITTED        $4,651.59                          
+                                              17:11:26   27-02-14 PAGE 0002     
+ USER NO  0055A JULY 29 HOSTED                           1ST CLM# 000040500     
+                                                                                
+ PHYSICIAN 01908 KAI JOEL                                                      
+                                                                                
+ PHYSICIAN 01908  # OF SOCIOL  RECORDS              8                           
+                  # OF ADDRESS RECORDS              8                           
+                  # OF REMARKS RECORDS              0                           
+                  # OF SERVICE RECORDS             25                           
+                  # OF NON-RES RECORDS              0                           
+                  TOTAL FEE SUBMITTED        $2,421.92                          
+                                              17:11:26   27-02-14 PAGE 0003     
+ USER NO  0055A JULY 29 HOSTED                           1ST CLM# 000040500     
+                                                                                
+ PHYSICIAN 00705 KYLE NIKITA                                                 
+                                                                                
+ PHYSICIAN 00705  # OF SOCIOL  RECORDS             47                           
+                  # OF ADDRESS RECORDS             47                           
+                  # OF REMARKS RECORDS              1                           
+                  # OF SERVICE RECORDS             74                           
+                  # OF NON-RES RECORDS              1                           
+                  TOTAL FEE SUBMITTED        $7,697.11                          
+ USER NO   0055A  # OF SOCIOL  RECORDS             73    LAST CLM 000041308     
+                  # OF ADDRESS RECORDS             73                           
+                  # OF REMARKS RECORDS              7                           
+                  # OF SERVICE RECORDS            131                           
+                  # OF NON-RES RECORDS              3                           
+                  TOTAL FEE SUBMITTED       $14,770.62                          
+ FILE ACCEPTED                                                                  
+ END OF REPORT                                                                  

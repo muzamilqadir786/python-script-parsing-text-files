@@ -1,0 +1,74 @@
+ 
+
+
+Script: P3_Processor
+
+Command Line Inputs:
+ MySQL Password
+ Input File path
+
+ Purpose:
+  Record the Submission Confirmation data in the database and link it to the pertinent records.
+
+ ** If processing is not Successful we need to display an error message **
+ The script will be run on the command line on a linux system
+
+
+Logic:
+
+ Given a P3 Submission Confirmation file: 
+   1. Locate the associated "Submissions" record in the database
+   		a. Query the claims table,
+   		    Find the record where claims.manitoba_health_claim_id = "first_claim_number"
+   		b. Store claims.submission_id 
+   2. Update the "Submissions" record with the information from the File
+   		a. Set Submissions.p3_accept_date and Submissions.first_claim_number of the DB record with the ID that was found in #1
+   3. Create associated "Submission_Lines" records
+   		a. Query the physicians table to get the physician_id based on the practitioner_number that was parsed from the P3 File
+   		b. Create a Sumission_Lines Record:
+ 			submission_id		=	Found in Step 1a
+ 			physician_id		=   Found in Step 3a
+ 			practitioner_number =   Parsed from file
+ 			p3_submitted_amount =   Parsed from file
+
+   4. If processing successfule Delete the P3 File
+
+ Processing should fail if:
+  I.   Cannot connect to the DB
+  II.  Cannot locate the submission_id from the claims table
+  III. Cannot locate any physician_id in the physicians table
+ 	*** I.E. we should not write anything to the DB unless we can locate all of the correct IDs ***
+ 	***      We should never write a partial file to the DB ***
+ 	   (Reasoning: If the script fails then I can correct the issue and just re-run the script to process the file)
+
+
+
+The bigger Picture:
+ This script is part of a larger system, for contxt here's how it fits:
+ 	1. A Submission file is generated in the system -- this will create a new submissions.submission_id
+ 	2. The file is sent off for 3rd party processing
+ 	3. The 3rd party system replies with a P3 file confirming that their system has processed the submission
+ 	4. **** We run this Script to store the P3 results back in our DB *** 
+
+	
+Hi Nawazish,
+I've tested te script and it works - great work!
+
+There are a few corrections that need to be made just to clean it up a bit:
+
+1. One of the queries has a hard-coded value of 437 - this should be changed to first_clm_no
+
+2. If the connection to the DB fails the script should exit with an error message
+
+3. If any of the Select statements come back with a no rows or a null ID the script should exit with a. Error message
+
+4. We should do all of the inserts and updates at the end of the script. that way if #3 fails we don't run any of the statements. (I.e. Step 2 should happen after step 3a)
+
+Let me know if you have any questions for me - I will have the information for the second script ready in about 48hrs.
+
+
+
+
+
+
+

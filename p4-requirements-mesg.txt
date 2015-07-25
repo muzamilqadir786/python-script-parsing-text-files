@@ -1,0 +1,58 @@
+Hello Nawazish,
+
+I'd like to apologize again for all of the delays with this project.
+As I mentioned before I have been dealing with some family issues.
+
+I am back now and I have reviewed the code that you wrote - it's very impressive.
+Great work!
+
+I've tested it and the database and parsing work flawlessly.
+
+If you have the time to continue this project, can you please proceed with adding the e-mails?
+
+
+
+
+
+
+As a reminder - here is the logic we were working on:
+(All of the instructions are also on dropbox:
+https://www.dropbox.com/sh/hmjxji3tmznoryv/P7ghdKuuiE)
+
+5. IF command Line input "Send E-mails" = "Y"
+      -> Send an e-mail to each physician that had a return_summary_line entry (See template below)
+      -> The email address is stored in the DB: physicians.email
+
+
+SMTP Info to use:
+  Server: mail.ammes.ca
+  Port: 587
+  User Name: automation@ammes.ca
+  Password: odeskp4
+
+
+E-mail Template to use:
+  To: {physicians.email}
+
+  Subject: 
+  Reconciliation File Loaded
+
+  Body: 
+  Hello {physicians.preferred_name},
+
+  The {returns.name} reconciliation file has just been loaded into the system.
+
+  Here's what was loaded:
+
+  Total Fees: {return_summary_lines.total_fees}
+  Processed: {return_summary_lines.claims_processed}
+  Pending: {return_summary_lines.claims_pending}
+  Returns: {return_summary_lines.edit_eligibility_returns}
+  Interest: {return_summary_lines.interest}
+  Interest Claims: {return_summary_lines.interest_claims_processed}
+
+  Feel free to log in to ammes.ca  to review it at your convenience,
+
+  Thank-you.
+
+  - Sandy
